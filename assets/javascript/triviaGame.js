@@ -1,31 +1,18 @@
+var search = "#searchInput"
+var numberOfRecords = "#recordNum" 
+var startYear = "#startYear" + "0101"
+var endYear = "#endYear" + "1231"
+var key = "mFOHoR2tOylWqAA7pUS0mjkNpgXdMziR"
+var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + key + "&q=" + search + "&begin_date=" + startYear + "&end_date=" + endYear
 
-var userSelections = []
-var numQuestions = 7;
-var answerKey = ["C", "A", "A", "A", "A", "A", "A"]
-var correctAnswers = 0;
+$("#submitSearch").on("click",function(){
+    search = $("#searchInput").attr("value");
+    numberOfRecords = $("#recordNum").attr("value");
+    startYear = $("#startYear").attr("value");
+    endYear = $("#endYear").attr("value");
+})
 
-var submitAnswer = function(numQuestions) {
-    for (var i = 1; i < numQuestions + 1; i++) {
-        
-        var choices = document.getElementsByName('question' + i);
-        for (var j = 0; j < choices.length; j++) {
-            if (choices[j].checked) {
-                userSelections.push(choices[j].id)
-                console.log(answerKey);
-                console.log(userSelections);
-            }
-        }
-    }
-    checkAnswers(userSelections, answerKey);
-}
+//search button id="submitSearch"
+//clear results button id="clearResults"
 
-var checkAnswers = function(userSelections, answerKey){
-    console.log ('Check is running');
-    for (var i = 0; i < answerKey.length; i++){
-            if (answerKey[i] === userSelections[i]){
-                correctAnswers++;
-                
-            }
-    }
-    console.log(correctAnswers);
-}
+console.log(queryURL); //console logging for test of cantcatnation (don't spell check that).
