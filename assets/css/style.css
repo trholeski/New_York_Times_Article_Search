@@ -1,6 +1,16 @@
-div{
+/* div{
     border: .5px solid black;
-}
+} */
 #parentContainer{
-    width: 80%;
+    width: 100%;
+    align: center;
+
 }
+#numRecordsLabel {
+    display: inline-block;
+}
+
+/* form {
+    width: 80%;
+    align: center;
+}; */
