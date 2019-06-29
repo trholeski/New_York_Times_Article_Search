@@ -11,6 +11,7 @@ var queryURL
 $("#submitSearch").on("click", function(){
     search = $("#searchInput").val();
     numberOfRecords = $("#recordNum").val();
+    console.log(numberOfRecords);
     startYear = $("#startYear").val();
     endYear = $("#endYear").val();
     queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + key + "&q=" + search + "&begin_date=" + startYear + "0101&end_date=" + endYear + "1231"
@@ -20,7 +21,8 @@ $("#submitSearch").on("click", function(){
         method: "GET"
     }).then(function(response) {
         console.log(response);
-        var results = response.docs;
+        console.log(response.response.docs)
+        var results = response.response.docs;
         for(var i = 0; i<numberOfRecords; i++) {
             var div = $("<div>");
             var p = $("<p>");
@@ -30,7 +32,7 @@ $("#submitSearch").on("click", function(){
             div.append(headline);
             div.append(link);
             div.append(abstract);
-            $("#").prepend(div);
+            $("#results").prepend(div);
         }
     });
 });
