@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NYT Search</title>
-
     <link href="https://fonts.googleapis.com/css?family=Cinzel|Cinzel+Decorative|Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/css-reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"                      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -14,6 +13,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="assets/javascript/triviaGame.js"></script>
 </head>
 <body>
 
@@ -27,7 +28,7 @@
             <label id="numRecordsLabel" for="example-text-input" class="col-8 offset-2 col-form-label">Search Term:</label>
         
             <div class="col-8 offset-2">
-                <input class="form-control" type="text" value="searchTerm" id="searchInput">
+                <input class="form-control" type="text" id="searchInput" value="">
             </div>
         </div>
 
@@ -35,7 +36,7 @@
             <label id="numRecordsLabel" for="example-text-input" class="col-8 offset-2 col-form-label">Number of Records to Retrieve: </label>
     
             <div class="col-8 offset-2">
-            <input class="form-control" type="text" value="records" id="recordNum">
+            <input class="form-control" type="text" value="" id="recordNum">
             </div>
         </div>
 
@@ -43,7 +44,7 @@
             <label id="numRecordsLabel" for="example-text-input" class="col-8 offset-2 col-form-label">Start Year (Optional): </label>
             
             <div class="col-8 offset-2">
-            <input class="form-control" type="text" value="year" id="startYear">
+            <input class="form-control" type="text" value="" id="startYear">
             </div>
         </div>
 
@@ -51,22 +52,23 @@
             <label id="numRecordsLabel" for="example-text-input" class="col-8 offset-2 col-form-label">End Year (Optional): </label>
 
             <div class="col-8 offset-2">
-                <input class="form-control" type="text" value="year" id="endYear">
+                <input class="form-control" type="text" value="" id="endYear">
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-2 offset-2">
-                <button id= "submitSearch" onclick="submitQuery()">Submit Query</button>
+                <button type = "button" id= "submitSearch" >Submit Query</button>
             </div>
         <!-- </div>
             <div class="row"> -->
             <div class="col-md-2">
-                <button id="clearResults" onclick="clearResults()">Clear Results</button>
+                <button type = "button" id="clearResults">Clear Results</button>
             </div>
         </div>
-
     </form>
+    <div id="results">
+    </div>
 </div>
 
               <!-- </div>
