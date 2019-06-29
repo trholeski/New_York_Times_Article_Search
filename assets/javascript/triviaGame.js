@@ -26,9 +26,9 @@ $("#submitSearch").on("click", function(){
         for(var i = 0; i<numberOfRecords; i++) {
             var div = $("<div>");
             var p = $("<p>");
-            var headline = p.text("Headline: " + results[i].headline.main);
-            var link = p.text("Link: " + results[i].web_url);
-            var abstract = p.text("Abstract: " + results[i].abstract);
+            var headline = p.html("Headline: " + results[i].headline.main);
+            var link = p.html("Link: " + results[i].web_url);
+            var abstract = p.html("Abstract: " + results[i].abstract);
             div.append(headline);
             div.append(link);
             div.append(abstract);
