@@ -24,14 +24,17 @@ $("#submitSearch").on("click", function(){
         console.log(response.response.docs)
         var results = response.response.docs;
         for(var i = 0; i<numberOfRecords; i++) {
-            var div = $("<div>");
-            var p = $("<p>");
-            var headline = p.html("Headline: " + results[i].headline.main);
-            var link = p.html("Link: " + results[i].web_url);
-            var abstract = p.html("Abstract: " + results[i].abstract);
-            div.append(headline);
-            div.append(link);
-            div.append(abstract);
+            var div = $("<div class=card>");
+            // var p = $("<p>");
+            // var headline = p.html("Headline: " + results[i].headline.main);
+            // var link = p.html("Link: " + results[i].web_url);
+            // var abstract = p.html("Abstract: " + results[i].abstract);
+            // div.append(headline);
+            // div.append(link);
+            // div.append(abstract);
+             div.append("<p> Head Line: "+ results[i].headline.main+"</p>");
+             div.append("<p>Web URL: "+ results[i].web_url+"</p>");
+             div.append("<p>Abstract: "+ results[i].abstract+"</p>");
             $("#results").prepend(div);
         }
     });
